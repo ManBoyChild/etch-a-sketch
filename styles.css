@@ -40,3 +40,9 @@ body {
     grid-row: 2/3;
     justify-content: center;
 }
+
+.title {
+    grid-column: 3/4;
+    text-align: center;
+    font-size: 4rem;
+}
