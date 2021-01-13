@@ -57,6 +57,10 @@ function colourCell(event) {
     } else if (colourSelector.selectedIndex === 7) {
         let randomColour = Math.floor(Math.random()*16777215).toString(16);
         event.target.style.backgroundColor = "#" + randomColour;
+    } else if (colourSelector.selectedIndex === 8) {
+        for (let i = 255; i > 0; i -= 25) {
+            event.target.style.backgroundColor = `rbg(${i}, ${i}, ${i})`;
+        }
     }
     
 }
