@@ -26,6 +26,10 @@ body {
     grid-template-rows: 10vh 80vh 10vh;
 }
 
+#reset {
+    background-color: #aaa;
+}
+
 .sideBar {
     display: grid;
     background-color: rgb(78, 99, 39);
