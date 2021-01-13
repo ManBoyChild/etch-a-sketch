@@ -1,6 +1,7 @@
 //GRID INITIALIATION
 const container = document.getElementById("container");
 
+
 let rows = 16;
 let cols = 16;
 
@@ -10,9 +11,7 @@ function createGrid (rows, cols) {
     for (let i = 0; i < (rows * cols); i++) {
         let cells = document.createElement("div");
         container.appendChild(cells).className = "gridCell";
-        console.log(cells.length);
     }
-    
 }
 
 createGrid(rows, cols);
@@ -55,6 +54,9 @@ function colourCell(event) {
         event.target.style.backgroundColor = "Pink";
     } else if (colourSelector.selectedIndex === 6) {
         event.target.style.backgroundColor = "Orange";
+    } else if (colourSelector.selectedIndex === 7) {
+        let randomColour = Math.floor(Math.random()*16777215).toString(16);
+        event.target.style.backgroundColor = "#" + randomColour;
     }
     
 }
@@ -79,26 +81,27 @@ function removeGridLines (event) {
 //SPECIFY NEW GRID SIZE INPUT
 const submitBtn = document.querySelector("#submit");
 const gridSizeValue = document.getElementById("gridSizeSelect");
-console.log(submitBtn, gridSizeValue);
-console.log(gridSizeValue.innerHTML);
 
 submitBtn.addEventListener("click", resizeGrid);
 
 function resizeGrid(event) {
-    if (gridSizeValue.value <= 6 || gridSizeValue.value >= 100) {
+    if (gridSizeValue.value < 6 || gridSizeValue.value > 100) {
         alert("Please enter a value between 6 and 100.");
-        return
-    } else {
-        let newRows = gridSizeValue.value;
-        let newCols = gridSizeValue.value;
         gridSizeValue.value = "";
-        resetGrid();
-        createGrid (newRows, newCols);
+    } else if (isNaN(gridSizeValue.value)) {
+        alert("please enter a numeric value between 6 and 100.");
+        gridSizeValue.value = "";
+    } else {
+        container.innerHTML = "";
+        let rows = gridSizeValue.value;
+        let cols = gridSizeValue.value;
+        gridSizeValue.value = "";
+        createGrid (rows, cols);
+        gridCell = document.querySelectorAll(".gridCell");
         addEvent(gridCell);
         addStyle(gridCell);
     }
 }
-
 
 
 //RESET BUTTON
