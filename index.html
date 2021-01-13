@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" async></script>
+    <title>Etch-A-Sketch</title>
+</head>
+<body>
+
+    <div class="layoutGrid">
+        <div class="sideBar">
+
+            <label for="colours">Select your colour: 
+                <select name="colours" id="colours">
+                    <option value="black" selected>Black</option>
+                    <option value="blue">Blue</option>
+                    <option value="red">Red</option>
+                    <option value="green">Green</option>
+                    <option value="yellow">Yellow</option>
+                    <option value="pink">Pink</option>
+                    <option value="orange">Orange</option>
+                    <option value="rainbow">Rainbow</option>
+                </select>
+            </label>
+            
+            
+            <br>
+
+            <label for="gridLines">Turn gridlines off: 
+                <input type="checkbox" id="gridLines" name="gridLines">
+            </label>
+
+            <br>
+
+            <label for="gridSize"> What size grid would you like?
+                <input type="text" id="gridSizeSelect" placeholder="6 - 100">
+                <input type="submit" value="submit" id="submit">
+            </label>
+
+            <br>
+
+            <button type="reset" id="reset">Reset the grid?</button>
+            
+
+        </div>
+        
+        <div id="container">
+
+        </div>
+    </div>
+</body>
+</html>

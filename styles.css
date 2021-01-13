@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+
+body {
+    font-family: "Shadows Into Light", sans-serif;
+}
+
+:root {
+    --grid-cols: 16;
+    --grid-rows: 16;
+}
+
+#container {
+    border: 2px solid black;
+    display: grid;
+    grid-template-rows: repeat(var(--grid-rows), 1fr);
+    grid-template-columns: repeat(var(--grid-cols), 1fr);
+    grid-column: 3/4;
+    grid-row: 2/3;
+    grid-template-columns: repeat(4 1fr);
+}
+
+.layoutGrid {
+    background-color: #aaa;
+    display: grid;
+    grid-template-columns: 10vw 20vw 50vw 20vw;
+    grid-template-rows: 10vh 80vh 10vh;
+}
+
+.sideBar {
+    display: grid;
+    background-color: rgb(78, 99, 39);
+    border: solid black;
+    border-width: 2px 0 2px 2px;
+    font-size: 1.5rem;
+    grid-column: 2/3;
+    grid-row: 2/3;
+    justify-content: center;
+}
